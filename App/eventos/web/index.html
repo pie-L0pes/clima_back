@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos Climáticos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="screen-login" class="screen">
+    <div class="login-card">
+      <h2>Eventos Climáticos</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <input type="email" id="login-email" placeholder="E-mail" required>
+        </div>
+        <div class="form-group">
+          <input type="password" id="login-senha" placeholder="Senha" required>
+        </div>
+        <button type="submit" class="btn-primary">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="screen-home" class="screen hidden">
+    <header class="navbar">
+      <h1 class="logo-title">Eventos Climáticos</h1>
+      <div class="user-controls">
+        <button id="btn-add-evento" class="btn-circle" title="Cadastrar Evento">+</button>
+        <span id="user-name" class="user-name">Ana Silva</span>
+        <button id="btn-logout" class="btn-outline">Sair</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="lista-eventos" class="event-list"></div>
+    </main>
+  </div>
+  <div id="modal-evento" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal" class="close-btn">&times;</span>
+      <h3 id="modal-title">Novo Evento</h3>
+      <form id="evento-form">
+        <input type="hidden" id="evento-id">
+        <div class="form-group">
+          <label for="evento-cidade">Cidade:</label>
+          <input type="text" id="evento-cidade" placeholder="Ex: Amparo" required>
+        </div>
+        <div class="form-group">
+          <label for="evento-tipo">Tipo de Evento:</label>
+          <input type="text" id="evento-tipo" placeholder="Ex: Tempestade" required>
+        </div>
+        <div class="form-group">
+          <label for="evento-temp">Temperatura Máxima:</label>
+          <input type="number" step="0.1" id="evento-temp" placeholder="Ex: 34.2">
+        </div>
+        <div class="form-group">
+          <label for="evento-impacto">Nível de Impacto:</label>
+          <input type="text" id="evento-impacto" placeholder="Ex: Derrubada de árvores">
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-detalhes" class="modal hidden">
+    <div class="modal-content">
+      <span id="close-modal-detalhes" class="close-btn">&times;</span>
+      <h3 id="detalhes-titulo">Detalhes do Evento</h3>
+      <div class="detalhes-body">
+        <p><strong>Cidade:</strong> <span id="det-cidade"></span></p>
+        <p><strong>Tipo de Evento:</strong> <span id="det-tipo"></span></p>
+        <p><strong>Temperatura Máxima:</strong> <span id="det-temp"></span> °C</p>
+        <p><strong>Nível de Impacto:</strong></p>
+        <p id="det-impacto" class="impacto-box"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
